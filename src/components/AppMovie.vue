@@ -22,7 +22,7 @@ export default {
         <div v-for="film in store.moviesList" class="movie-card" :class="film.media_type == 'person' ? 'd-none' : '', film.media_type == 'tv' ? 'd-none' : ''">
             <img :src="(film.poster_path === null) ? '../../public/img/netflix-nocover.jpeg' : (coverImage + film.poster_path)" alt="" class="movie-cover">
             <div class="movie-info">
-                <h4>{{ film.title || film.name }}</h4>
+              <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="easteregg"><h4>{{ film.title || film.name }}</h4></a>
                 <p>Type: {{ film.media_type }} <br>
                   <div class="d-flex">
                       Vote:
@@ -53,7 +53,10 @@ export default {
   white-space: nowrap;
   justify-content: space-between;
   padding: 20px;
-  width: 100%;
+  width: calc(100% - 50px);
+  height: 410px;
+  background-color: $bf-black;
+  margin: 0 25px 25px 25px;
 }
 
 ::-webkit-scrollbar {
@@ -127,6 +130,13 @@ export default {
 
 .starempty{
   color: $bf-lightgrey;
+}
+.easteregg{
+    color: $bf-white;
+    text-decoration: none;
+}
+.easteregg:hover{
+    text-decoration: underline;
 }
     
 </style>
