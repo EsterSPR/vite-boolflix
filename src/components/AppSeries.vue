@@ -12,14 +12,14 @@ export default {
     methods: {
         langOther(e) {
             e.target.src = "../../public/lang-ico/other.png"
-        },
+        }
     }
 }
 </script>
 
 <template lang="">
     <div class="cards-container">
-        <div v-for="film in store.moviesList" class="movie-card" :class="film.media_type == 'person' ? 'd-none' : '', film.media_type == 'tv' ? 'd-none' : ''">
+        <div v-for="film in store.moviesList" class="movie-card" :class="film.media_type == 'person' ? 'd-none' : '', film.media_type == 'movie' ? 'd-none' : ''">
             <img :src="(film.poster_path === null) ? '../../public/img/netflix-nocover.jpeg' : (coverImage + film.poster_path)" alt="" class="movie-cover">
             <div class="movie-info">
                 <h4>{{ film.title || film.name }}</h4>

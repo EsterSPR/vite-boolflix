@@ -52,6 +52,7 @@ export default {
     header{
         background-color: $bf-black;
         padding: 30px;
+        margin-bottom: 30px;
 
         h2{
             color: $bf-red;
